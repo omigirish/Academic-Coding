@@ -1,0 +1,118 @@
+import tkinter
+import pymysql as py
+
+db = py.connect('localhost', 'root', 'Sushant@1234', 'electricity')
+cursor = db.cursor()
+
+t = ()
+root = tkinter.Tk()
+root.geometry("600x400")
+root.title("Electricity Consumption")
+
+
+def add():
+    w1 = tkinter.Toplevel()
+    w1.geometry("600x400")
+    w1.title("ADD USER")
+    l1 = tkinter.Label(w1, text="Enter ID")
+    l1.place(anchor=tkinter.CENTER, relx=0.28, rely=0.2)
+    l2 = tkinter.Label(w1, text="Enter Name")
+    l2.place(anchor=tkinter.CENTER, relx=0.3, rely=0.3)
+    l3 = tkinter.Label(w1, text="Enter Month")
+    l3.place(anchor=tkinter.CENTER, relx=0.3, rely=0.4)
+    l4 = tkinter.Label(w1, text="Enter Units")
+    l4.place(anchor=tkinter.CENTER, relx=0.3, rely=0.5)
+    v1 = tkinter.StringVar()
+    v2 = tkinter.StringVar()
+    v3 = tkinter.StringVar()
+    v4 = tkinter.StringVar()
+    v5 = tkinter.StringVar()
+
+    e1 = tkinter.Entry(w1, textvariable=v1)
+    e1.place(anchor=tkinter.CENTER, relx=0.5, rely=0.2)
+    e2 = tkinter.Entry(w1, textvariable=v2)
+    e2.place(anchor=tkinter.CENTER, relx=0.5, rely=0.3)
+    e3 = tkinter.Entry(w1, textvariable=v3)
+    e3.place(anchor=tkinter.CENTER, relx=0.5, rely=0.4)
+    e4 = tkinter.Entry(w1, textvariable=v4)
+    e4.place(anchor=tkinter.CENTER, relx=0.5, rely=0.5)
+
+    def addcus():
+        id = v1.get()
+        name = v2.get()
+        month = v3.get()
+        units = int(v4.get())
+        type = v5.get()
+        if (type == 'Residential'):
+            type = 'Res'
+        elif (type == 'Commercial'):
+            type = 'Com'
+
+        q1 = ('''insert into details (id,name,month,type,units) values ("%s","%s","%s","%s","%s")'''%(id,name,month,type,str(units)))
+        cursor.execute(q1)
+        db.commit()
+
+    b5 = tkinter.Button(w1, text="Enter", command=addcus)
+    b5.place(anchor=tkinter.CENTER, relx=0.6, rely=0.8)
+    v5.set("Select Type")
+
+    def clear():
+        v1.set("")
+        v2.set("")
+        v3.set("")
+        v4.set("")
+        v5.set("Select Type")
+
+    b6 = tkinter.Button(w1, text="Clear", command=clear)
+    b6.place(anchor=tkinter.CENTER, relx=0.5, rely=0.8)
+    dm1 = tkinter.OptionMenu(w1, v5, "Residential", "Commercial")
+    dm1.place(anchor=tkinter.CENTER, relx=0.4, rely=0.6)
+
+    b7 = tkinter.Button(w1, text="Back", command=w1.withdraw)
+    b7.place(anchor=tkinter.CENTER, relx=0.4, rely=0.8)
+
+
+def delete():
+    w3 = tkinter.Toplevel()
+    w3.geometry("600x400")
+    w3.title("Delete Entry")
+    l6 = tkinter.Label(w3, text="Enter Id")
+    l6.place(anchor=tkinter.CENTER, relx=0.275, rely=0.3)
+    l7 = tkinter.Label(w3, text="Enter Month")
+    l7.place(anchor=tkinter.CENTER, relx=0.3, rely=0.4)
+    v6 = tkinter.StringVar()
+    v7 = tkinter.StringVar()
+    e6 = tkinter.Entry(w3, textvariable=v6)
+    e6.place(anchor=tkinter.CENTER, relx=0.5, rely=0.3)
+    e7 = tkinter.Entry(w3, textvariable=v7)
+    e7.place(anchor=tkinter.CENTER, relx=0.5, rely=0.4)
+
+    def delcus():
+        id = v6.get()
+        month = v7.get()
+        q1 = ("""delete from details where id = "%s" and month = "%s" """%(id,month))
+        cursor.execute(q1)
+        db.commit()
+       # print(list)
+
+    b8 = tkinter.Button(w3, text="Delete", command=delcus)
+    b8.place(anchor=tkinter.CENTER, relx=0.6, rely=0.5)
+
+    def clear():
+        v6.set("")
+        v7.set("")
+
+    b9 = tkinter.Button(w3, text="Clear", command=clear)
+    b9.place(anchor=tkinter.CENTER, relx=0.5, rely=0.5)
+
+    b10 = tkinter.Button(w3, text="Back", command=w3.withdraw)
+    b10.place(anchor=tkinter.CENTER, relx=0.4, rely=0.5)
+
+
+
+b1 = tkinter.Button(root, text="Add Entry", command=add)
+b1.place(anchor=tkinter.CENTER, relx=0.3, rely=0.2)
+b2 = tkinter.Button(root, text="Delete Entry", command=delete)
+b2.place(anchor=tkinter.CENTER, relx=0.31, rely=0.3)
+
+root.mainloop()
