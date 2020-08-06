@@ -1,0 +1,1 @@
+grep -v -E 'beauty|sports' product.lst

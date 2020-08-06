@@ -1,0 +1,338 @@
+cd desktop
+bash: cd: desktop: No such file or directory
+vinit@vinit-Inspiron-5567:~$ cd Desktop
+vinit@vinit-Inspiron-5567:~/Desktop$ sed -n '1,5p' employee.lst
+10 pranali oza manager 10000
+11 vinit soni manager 9000
+12 shloka singh clerk 8000
+13 mohnish nathani peon 5000
+14 girish salunke peon 4000
+vinit@vinit-Inspiron-5567:~/Desktop$ sed -n '3,7p' employee.lst
+12 shloka singh clerk 8000
+13 mohnish nathani peon 5000
+14 girish salunke peon 4000
+15 anuj vyas clerk 5000
+16 ayushi shah manager 8000
+vinit@vinit-Inspiron-5567:~/Desktop$ sed -n '$!p' employee.lst
+10 pranali oza manager 10000
+11 vinit soni manager 9000
+12 shloka singh clerk 8000
+13 mohnish nathani peon 5000
+14 girish salunke peon 4000
+15 anuj vyas clerk 5000
+16 ayushi shah manager 8000
+17 rashi soni peon 4000
+18 sushant sawant clerk 6000
+19 janhavi zarapkar manager 9000
+vinit@vinit-Inspiron-5567:~/Desktop$ sed -n '2,6!p' employee.lst
+10 pranali oza manager 10000
+16 ayushi shah manager 8000
+17 rashi soni peon 4000
+18 sushant sawant clerk 6000
+19 janhavi zarapkar manager 9000
+20 shakshi parekh clerk 7500
+vinit@vinit-Inspiron-5567:~/Desktop$ sed -n '1,3p'
+'6,8p'
+'6,8p'
+
+
+^C
+vinit@vinit-Inspiron-5567:~/Desktop$ sed -n '1,3p
+> 6,8p
+> $p' employee.lst
+10 pranali oza manager 10000
+11 vinit soni manager 9000
+12 shloka singh clerk 8000
+15 anuj vyas clerk 5000
+16 ayushi shah manager 8000
+17 rashi soni peon 4000
+20 shakshi parekh clerk 7500
+vinit@vinit-Inspiron-5567:~/Desktop$ cat instr.fil
+cat: instr.fil: No such file or directory
+vinit@vinit-Inspiron-5567:~/Desktop$ cat > instr.fil
+1,3p
+6,8p
+$pvinit@vinit-Inspiron-5567:~/Desktop$ sed -n -f instr.fil employee.lst
+10 pranali oza manager 10000
+11 vinit soni manager 9000
+12 shloka singh clerk 8000
+15 anuj vyas clerk 5000
+16 ayushi shah manager 8000
+17 rashi soni peon 4000
+20 shakshi parekh clerk 7500
+vinit@vinit-Inspiron-5567:~/Desktop$ sed -n '/manager/p' employee.lst
+10 pranali oza manager 10000
+11 vinit soni manager 9000
+16 ayushi shah manager 8000
+19 janhavi zarapkar manager 9000
+vinit@vinit-Inspiron-5567:~/Desktop$ sed -n '/manager/,/clerk/p' employee.lst
+10 pranali oza manager 10000
+11 vinit soni manager 9000
+12 shloka singh clerk 8000
+16 ayushi shah manager 8000
+17 rashi soni peon 4000
+18 sushant sawant clerk 6000
+19 janhavi zarapkar manager 9000
+20 shakshi parekh clerk 7500
+vinit@vinit-Inspiron-5567:~/Desktop$ sed -n '2,/manager/p' employee.lst
+11 vinit soni manager 9000
+12 shloka singh clerk 8000
+13 mohnish nathani peon 5000
+14 girish salunke peon 4000
+15 anuj vyas clerk 5000
+16 ayushi shah manager 8000
+vinit@vinit-Inspiron-5567:~/Desktop$ sed -n '2,/clerk/p' employee.lst
+11 vinit soni manager 9000
+12 shloka singh clerk 8000
+vinit@vinit-Inspiron-5567:~/Desktop$ sed -n '/rashi/d' employee.lst
+vinit@vinit-Inspiron-5567:~/Desktop$ sed -n 's/\t/ g' employee.lst
+sed: -e expression #1, char 7: unterminated `s' command
+vinit@vinit-Inspiron-5567:~/Desktop$ sed -n 's/\t/ / g' employee.lst
+vinit@vinit-Inspiron-5567:~/Desktop$ sed -n 'p' employee.lst
+10 pranali oza manager 10000
+11 vinit soni manager 9000
+12 shloka singh clerk 8000
+13 mohnish nathani peon 5000
+14 girish salunke peon 4000
+15 anuj vyas clerk 5000
+16 ayushi shah manager 8000
+17 rashi soni peon 4000
+18 sushant sawant clerk 6000
+19 janhavi zarapkar manager 9000
+20 shakshi parekh clerk 7500
+vinit@vinit-Inspiron-5567:~/Desktop$ sed -n '/\([Aa]\)\([a]\)/p' employee.lst
+vinit@vinit-Inspiron-5567:~/Desktop$ sed -n '/\([Aa]\)\([n]\)/p' employee.lst
+10 pranali oza manager 10000
+11 vinit soni manager 9000
+13 mohnish nathani peon 5000
+15 anuj vyas clerk 5000
+16 ayushi shah manager 8000
+18 sushant sawant clerk 6000
+19 janhavi zarapkar manager 9000
+vinit@vinit-Inspiron-5567:~/Desktop$ sed -n '/\([i]\)\([a-z]*\)/p' employee.lst
+10 pranali oza manager 10000
+11 vinit soni manager 9000
+12 shloka singh clerk 8000
+13 mohnish nathani peon 5000
+14 girish salunke peon 4000
+16 ayushi shah manager 8000
+17 rashi soni peon 4000
+19 janhavi zarapkar manager 9000
+20 shakshi parekh clerk 7500
+vinit@vinit-Inspiron-5567:~/Desktop$ sed -n '3,8s/peon/clerk/gp' employee.lst
+13 mohnish nathani clerk 5000
+14 girish salunke clerk 4000
+17 rashi soni clerk 4000
+vinit@vinit-Inspiron-5567:~/Desktop$ ^C
+vinit@vinit-Inspiron-5567:~/Desktop$ grep sports p.lst
+301 stumps 270 sports
+302 ball 30 sports
+303 bat 400 sports
+vinit@vinit-Inspiron-5567:~/Desktop$ grep -c beauty p.lst
+2
+vinit@vinit-Inspiron-5567:~/Desktop$ grep -n clothing p.lst
+2:201 dress 200 clothing
+5:202 shirt 300 clothing
+7:203 pants 350 clothing
+vinit@vinit-Inspiron-5567:~/Desktop$ grep ^clothing p.lst
+vinit@vinit-Inspiron-5567:~/Desktop$ grep ^[clothing] p.lst
+vinit@vinit-Inspiron-5567:~/Desktop$ grep -v clothing p.lst
+101 chips 10 food
+301 stumps 270 sports
+401 eyeliner 150 beauty
+102 colddrink 20 food
+402 nailpaint 200 beauty
+302 ball 30 sports
+303 bat 400 sports
+103 fruits 200 food 
+vinit@vinit-Inspiron-5567:~/Desktop$ grep [cC]lothing p.lst
+201 dress 200 clothing
+202 shirt 300 clothing
+203 pants 350 clothing
+vinit@vinit-Inspiron-5567:~/Desktop$ grep ^[^1] p.lst
+201 dress 200 clothing
+301 stumps 270 sports
+401 eyeliner 150 beauty
+202 shirt 300 clothing
+203 pants 350 clothing
+402 nailpaint 200 beauty
+302 ball 30 sports
+303 bat 400 sports
+vinit@vinit-Inspiron-5567:~/Desktop$ grep ^[1] p.lst
+101 chips 10 food
+102 colddrink 20 food
+103 fruits 200 food 
+vinit@vinit-Inspiron-5567:~/Desktop$ grep ^1 p.lst
+101 chips 10 food
+102 colddrink 20 food
+103 fruits 200 food 
+vinit@vinit-Inspiron-5567:~/Desktop$ grep $ts p.lst
+
+^C
+vinit@vinit-Inspiron-5567:~/Desktop$ grep ts$ p.lst
+301 stumps 270 sports
+302 ball 30 sports
+303 bat 400 sports
+vinit@vinit-Inspiron-5567:~/Desktop$ grep clothing -e sports p.lst
+grep: clothing: No such file or directory
+p.lst:301 stumps 270 sports
+p.lst:302 ball 30 sports
+p.lst:303 bat 400 sports
+vinit@vinit-Inspiron-5567:~/Desktop$ grep -e clothing -e sports p.lst
+201 dress 200 clothing
+301 stumps 270 sports
+202 shirt 300 clothing
+203 pants 350 clothing
+302 ball 30 sports
+303 bat 400 sports
+vinit@vinit-Inspiron-5567:~/Desktop$ grep ^[^1-3] p.lst
+401 eyeliner 150 beauty
+402 nailpaint 200 beauty
+vinit@vinit-Inspiron-5567:~/Desktop$ awk '{print $1 "\t" $4}' p.lst
+101	food
+201	clothing
+301	sports
+401	beauty
+202	clothing
+102	food
+203	clothing
+402	beauty
+302	sports
+303	sports
+103	food
+vinit@vinit-Inspiron-5567:~/Desktop$ awk '/food/{print}' p.lst
+101 chips 10 food
+102 colddrink 20 food
+103 fruits 200 food 
+vinit@vinit-Inspiron-5567:~/Desktop$ awk '$3>=200{print $1 "\t" $2}' p.lst
+201	dress
+301	stumps
+202	shirt
+203	pants
+402	nailpaint
+303	bat
+103	fruits
+vinit@vinit-Inspiron-5567:~/Desktop$ awk '$3>=100 && $3<=200{print $1 "\t" $2}' p.lst
+201	dress
+401	eyeliner
+402	nailpaint
+103	fruits
+vinit@vinit-Inspiron-5567:~/Desktop$ awk '/sports/{print}' p.lst
+301 stumps 270 sports
+302 ball 30 sports
+303 bat 400 sports
+vinit@vinit-Inspiron-5567:~/Desktop$ awk '$4!= "sports"{print $1 "\t" $2 "\t" $3}' p.lst
+101	chips	10
+201	dress	200
+401	eyeliner	150
+202	shirt	300
+102	colddrink	20
+203	pants	350
+402	nailpaint	200
+103	fruits	200
+vinit@vinit-Inspiron-5567:~/Desktop$ awk '$4!= "sports"{print}' p.lst
+101 chips 10 food
+201 dress 200 clothing
+401 eyeliner 150 beauty
+202 shirt 300 clothing
+102 colddrink 20 food
+203 pants 350 clothing
+402 nailpaint 200 beauty
+103 fruits 200 food 
+vinit@vinit-Inspiron-5567:~/Desktop$ awk '$4 !~ /od$/' p.lst
+201 dress 200 clothing
+301 stumps 270 sports
+401 eyeliner 150 beauty
+202 shirt 300 clothing
+203 pants 350 clothing
+402 nailpaint 200 beauty
+302 ball 30 sports
+303 bat 400 sports
+vinit@vinit-Inspiron-5567:~/Desktop$ awk '$4 ~ /od$/' p.lst
+101 chips 10 food
+102 colddrink 20 food
+103 fruits 200 food 
+vinit@vinit-Inspiron-5567:~/Desktop$ awk '$4 ~ /od$/ || $4 ~/y$/' p.lst
+101 chips 10 food
+401 eyeliner 150 beauty
+102 colddrink 20 food
+402 nailpaint 200 beauty
+103 fruits 200 food 
+vinit@vinit-Inspiron-5567:~/Desktop$ awk 'NR>=3 && NR<=8 ' p.lst
+301 stumps 270 sports
+401 eyeliner 150 beauty
+202 shirt 300 clothing
+102 colddrink 20 food
+203 pants 350 clothing
+402 nailpaint 200 beauty
+vinit@vinit-Inspiron-5567:~/Desktop$ awk 'NR==2 || NR==8 {print NR,$1,$2}' p.lst
+2 201 dress
+8 402 nailpaint
+vinit@vinit-Inspiron-5567:~/Desktop$ awk '{print NF}' p.lst
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+vinit@vinit-Inspiron-5567:~/Desktop$ awk '{print $NF}' p.lst
+food
+clothing
+sports
+beauty
+clothing
+food
+clothing
+beauty
+sports
+sports
+food
+vinit@vinit-Inspiron-5567:~/Desktop$ awk '$2 ~ "^c"' p.lst
+101 chips 10 food
+102 colddrink 20 food
+vinit@vinit-Inspiron-5567:~/Desktop$ awk 'length($0)>32' p.lst
+vinit@vinit-Inspiron-5567:~/Desktop$ awk 'length($0)>26' p.lst
+vinit@vinit-Inspiron-5567:~/Desktop$ awk 'length($0)>16' p.lst
+101 chips 10 food
+201 dress 200 clothing
+301 stumps 270 sports
+401 eyeliner 150 beauty
+202 shirt 300 clothing
+102 colddrink 20 food
+203 pants 350 clothing
+402 nailpaint 200 beauty
+302 ball 30 sports
+303 bat 400 sports
+103 fruits 200 food 
+vinit@vinit-Inspiron-5567:~/Desktop$ awk 'length($0)>18' p.lst
+201 dress 200 clothing
+301 stumps 270 sports
+401 eyeliner 150 beauty
+202 shirt 300 clothing
+102 colddrink 20 food
+203 pants 350 clothing
+402 nailpaint 200 beauty
+103 fruits 200 food 
+vinit@vinit-Inspiron-5567:~/Desktop$ awk '{print $1,$2,$3*0.05}'
+^C      
+vinit@vinit-Inspiron-5567:~/Desktop$ awk '{print $1,$2,$3*0.05}' p.lst
+101 chips 0.5
+201 dress 10
+301 stumps 13.5
+401 eyeliner 7.5
+202 shirt 15
+102 colddrink 1
+203 pants 17.5
+402 nailpaint 10
+302 ball 1.5
+303 bat 20
+103 fruits 10
+
+
+
+

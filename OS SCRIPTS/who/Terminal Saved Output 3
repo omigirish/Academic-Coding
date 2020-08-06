@@ -1,0 +1,786 @@
+Last login: Sat Apr 20 14:14:49 on ttys000
+Girishs-MacBook-Pro:~ girishsalunke$ cd Desktop
+Girishs-MacBook-Pro:Desktop girishsalunke$  sed -n '1,5p' student.lst
+91	shakshi	parekh	7045619727	290	IT
+92	girish	salunke	7045619727	280	COMPS
+93	mohnish	nathani	7045619727	290	IT
+94	vinit	soni	7045619727	290	COMPS
+95	janhavi	zarakpar7045619727	290	COMPS
+Girishs-MacBook-Pro:Desktop girishsalunke$  sed -n '1,4p' student.lst
+91	shakshi	parekh	7045619727	290	IT
+92	girish	salunke	7045619727	280	COMPS
+93	mohnish	nathani	7045619727	290	IT
+94	vinit	soni	7045619727	290	COMPS
+Girishs-MacBook-Pro:Desktop girishsalunke$  sed -n '1,5p' student.lst
+roll	name	surname	number		marks	branch
+91	shakshi	parekh	7045619727	290	IT
+92	girish	salunke	7045619727	280	COMPS
+93	mohnish	nathani	7045619727	290	IT
+94	vinit	soni	7045619727	290	COMPS
+Girishs-MacBook-Pro:Desktop girishsalunke$  sed -n '4,8p' student.lst
+93	mohnish	nathani	7045619727	290	IT
+94	vinit	soni	7045619727	290	COMPS
+95	janhavi	zarakpar7045619727	290	COMPS
+96	ayushi	shah	7045619727	290	IT
+97	mahima	sharma	7045619727	290	IT
+Girishs-MacBook-Pro:Desktop girishsalunke$ sed -n '$!p' employee.lst
+sed: employee.lst: No such file or directory
+Girishs-MacBook-Pro:Desktop girishsalunke$  sed -n '4,8p' student.lst
+93	mohnish	nathani	7045619727	290	IT
+94	vinit	soni	7045619727	290	COMPS
+95	janhavi	zarakpar7045619727	290	COMPS
+96	ayushi	shah	7045619727	290	IT
+97	mahima	sharma	7045619727	290	IT
+Girishs-MacBook-Pro:Desktop girishsalunke$  sed -n '$!p' employee.lst
+sed: employee.lst: No such file or directory
+Girishs-MacBook-Pro:Desktop girishsalunke$  sed -n '$!p' student.lst
+roll	name	surname	number		marks	branch
+91	shakshi	parekh	7045619727	290	IT
+92	girish	salunke	7045619727	280	COMPS
+93	mohnish	nathani	7045619727	290	IT
+94	vinit	soni	7045619727	290	COMPS
+95	janhavi	zarakpar7045619727	290	COMPS
+96	ayushi	shah	7045619727	290	IT
+97	mahima	sharma	7045619727	290	IT
+98	sushant	sawant	7045619727	290	IT
+99	anuj	vyas	7045619727	290	IT
+90	ovesh	shah	7045619727	290	IT
+
+
+
+
+
+Girishs-MacBook-Pro:Desktop girishsalunke$  sed -n '$p' student.lst
+
+Girishs-MacBook-Pro:Desktop girishsalunke$  sed -n '$p' student.lst
+
+Girishs-MacBook-Pro:Desktop girishsalunke$  sed -n '$!p' student.lst
+roll	name	surname	number		marks	branch
+91	shakshi	parekh	7045619727	290	IT
+92	girish	salunke	7045619727	280	COMPS
+93	mohnish	nathani	7045619727	290	IT
+94	vinit	soni	7045619727	290	COMPS
+95	janhavi	zarakpar7045619727	290	COMPS
+96	ayushi	shah	7045619727	290	IT
+97	mahima	sharma	7045619727	290	IT
+98	sushant	sawant	7045619727	290	IT
+99	anuj	vyas	7045619727	290	IT
+90	ovesh	shah	7045619727	290	IT
+
+
+
+
+
+Girishs-MacBook-Pro:Desktop girishsalunke$ sed -n '3,6$!p' student.lst
+sed: 1: "3,6$!p": invalid command code $
+Girishs-MacBook-Pro:Desktop girishsalunke$ sed -n '3,6!p' student.lst
+roll	name	surname	number		marks	branch
+91	shakshi	parekh	7045619727	290	IT
+96	ayushi	shah	7045619727	290	IT
+97	mahima	sharma	7045619727	290	IT
+98	sushant	sawant	7045619727	290	IT
+99	anuj	vyas	7045619727	290	IT
+90	ovesh	shah	7045619727	290	IT
+
+
+
+
+
+
+Girishs-MacBook-Pro:Desktop girishsalunke$ sed -n '7$!p' student.lst
+sed: 1: "7$!p": invalid command code $
+Girishs-MacBook-Pro:Desktop girishsalunke$ sed -n '7,$!p' student.lst
+roll	name	surname	number		marks	branch
+91	shakshi	parekh	7045619727	290	IT
+92	girish	salunke	7045619727	280	COMPS
+93	mohnish	nathani	7045619727	290	IT
+94	vinit	soni	7045619727	290	COMPS
+95	janhavi	zarakpar7045619727	290	COMPS
+Girishs-MacBook-Pro:Desktop girishsalunke$ sed -n '7,$!p' student.lst
+91	shakshi	parekh	7045619727	290	IT
+92	girish	salunke	7045619727	280	COMPS
+93	mohnish	nathani	7045619727	290	IT
+94	vinit	soni	7045619727	290	COMPS
+95	janhavi	zarakpar7045619727	290	COMPS
+96	ayushi	shah	7045619727	290	IT
+Girishs-MacBook-Pro:Desktop girishsalunke$ sed -n '1,3p
+> 6,8p
+> $p' student.lst
+91	shakshi	parekh	7045619727	290	IT
+92	girish	salunke	7045619727	280	COMPS
+93	mohnish	nathani	7045619727	290	IT
+96	ayushi	shah	7045619727	290	IT
+97	mahima	sharma	7045619727	290	IT
+98	sushant	sawant	7045619727	290	IT
+
+Girishs-MacBook-Pro:Desktop girishsalunke$ sed -n -e '1,3p' -e '6,8p' -e '$p' student.lst
+91	shakshi	parekh	7045619727	290	IT
+92	girish	salunke	7045619727	280	COMPS
+93	mohnish	nathani	7045619727	290	IT
+96	ayushi	shah	7045619727	290	IT
+97	mahima	sharma	7045619727	290	IT
+98	sushant	sawant	7045619727	290	IT
+
+Girishs-MacBook-Pro:Desktop girishsalunke$ sed -n -e '1,3p' -e '6,8p' -e '$p' student.lst
+91	shakshi	parekh	7045619727	290	IT
+92	girish	salunke	7045619727	280	COMPS
+93	mohnish	nathani	7045619727	290	IT
+96	ayushi	shah	7045619727	290	IT
+97	mahima	sharma	7045619727	290	IT
+98	sushant	sawant	7045619727	290	IT
+
+Girishs-MacBook-Pro:Desktop girishsalunke$ sed -n -e '1,3p' -e '6,8p' -e '$p' student.lst
+91	shakshi	parekh	7045619727	290	IT
+92	girish	salunke	7045619727	280	COMPS
+93	mohnish	nathani	7045619727	290	IT
+96	ayushi	shah	7045619727	290	IT
+97	mahima	sharma	7045619727	290	IT
+98	sushant	sawant	7045619727	290	IT
+
+Girishs-MacBook-Pro:Desktop girishsalunke$ sed -n -e '1,3p' -e '6,8p' -e '$p' student.lst
+91	shakshi	parekh	7045619727	290	IT
+92	girish	salunke	7045619727	280	COMPS
+93	mohnish	nathani	7045619727	290	IT
+96	ayushi	shah	7045619727	290	IT
+97	mahima	sharma	7045619727	290	IT
+98	sushant	sawant	7045619727	290	IT
+90	ovesh	shah	7045619727	290	IT
+Girishs-MacBook-Pro:Desktop girishsalunke$ cat>instr.fil
+sed -n '1,3p
+6,8p
+$p' student.lst
+^C
+Girishs-MacBook-Pro:Desktop girishsalunke$ sed -n -f instr.fil student.lst
+sed: 1: instr.fil: unterminated substitute pattern
+Girishs-MacBook-Pro:Desktop girishsalunke$ cat>inst.fil
+1,3p  
+6,8p
+$p
+^C
+Girishs-MacBook-Pro:Desktop girishsalunke$ sed -n -f inst.fil student.lst
+91	shakshi	parekh	7045619727	290	IT
+92	girish	salunke	7045619727	280	COMPS
+93	mohnish	nathani	7045619727	290	IT
+96	ayushi	shah	7045619727	290	IT
+97	mahima	sharma	7045619727	290	IT
+98	sushant	sawant	7045619727	290	IT
+90	ovesh	shah	7045619727	290	IT
+Girishs-MacBook-Pro:Desktop girishsalunke$ sed -n '/ayushi/' student.lst
+sed: 1: "/ayushi/": command expected
+Girishs-MacBook-Pro:Desktop girishsalunke$ sed -n '/ayuship/' student.lst
+sed: 1: "/ayuship/": command expected
+Girishs-MacBook-Pro:Desktop girishsalunke$ sed -n '/ayushi/p' student.lst
+96	ayushi	shah	7045619727	290	IT
+Girishs-MacBook-Pro:Desktop girishsalunke$ sed -n '1,4p' student.lst>>result.lst 
+Girishs-MacBook-Pro:Desktop girishsalunke$ cat result.lst
+91	shakshi	parekh	7045619727	290	IT
+92	girish	salunke	7045619727	280	COMPS
+93	mohnish	nathani	7045619727	290	IT
+94	vinit	soni	7045619727	290	COMPS
+Girishs-MacBook-Pro:Desktop girishsalunke$ sed '1i88 chitra singh 7045619727 270 IT' student.lst>newstudent.lst
+sed: 1: "1i88 chitra singh 70456 ...": command i expects \ followed by text
+Girishs-MacBook-Pro:Desktop girishsalunke$ sed '1i 88 chitra singh 7045619727 270 IT' student.lst>newstudent.lst
+sed: 1: "1i 88 chitra singh 7045 ...": command i expects \ followed by text
+Girishs-MacBook-Pro:Desktop girishsalunke$ sed '1i 88 chitra singh 7045619727 270 IT' student.lst>newstudent.lst
+sed: 1: "1i 88 chitra singh 7045 ...": command i expects \ followed by text
+Girishs-MacBook-Pro:Desktop girishsalunke$ sed '1i
+> 88 chitra singh 7045619727 270 IT' student.lst>newstudent.lst
+sed: 1: "1i
+88 chitra singh 7045 ...": command i expects \ followed by text
+Girishs-MacBook-Pro:Desktop girishsalunke$ sed -n '2,/COMPS/p'student.lst
+sed: 1: "2,/COMPS/pstudent.lst": extra characters at the end of p command
+Girishs-MacBook-Pro:Desktop girishsalunke$ sed -n '2,/COMPS/p' student.lst
+92	girish	salunke	7045619727	280	COMPS
+93	mohnish	nathani	7045619727	290	IT
+94	vinit	soni	7045619727	290	COMPS
+Girishs-MacBook-Pro:Desktop girishsalunke$ sed -n '3,/IT/p' student.lst
+93	mohnish	nathani	7045619727	290	IT
+94	vinit	soni	7045619727	290	COMPS
+95	janhavi	zarakpar7045619727	290	COMPS
+96	ayushi	shah	7045619727	290	IT
+Girishs-MacBook-Pro:Desktop girishsalunke$ sed 'a' student.lst
+sed: 1: "a": command a expects \ followed by text
+Girishs-MacBook-Pro:Desktop girishsalunke$ sed
+'a'
+'a'
+student.lst
+student.lst
+^C
+Girishs-MacBook-Pro:Desktop girishsalunke$ sed '
+> a' student.lst
+sed: 2: "
+a": command a expects \ followed by text
+Girishs-MacBook-Pro:Desktop girishsalunke$ sed 'a This is blank line' student.lst
+sed: 1: "a This is blank line": command a expects \ followed by text
+Girishs-MacBook-Pro:Desktop girishsalunke$ sed 'a /This is blank line/' student.lst
+sed: 1: "a /This is blank line/": command a expects \ followed by text
+Girishs-MacBook-Pro:Desktop girishsalunke$ sed '/janhavi/d' student.lst
+91	shakshi	parekh	7045619727	290	IT
+92	girish	salunke	7045619727	280	COMPS
+93	mohnish	nathani	7045619727	290	IT
+94	vinit	soni	7045619727	290	COMPS
+96	ayushi	shah	7045619727	290	IT
+97	mahima	sharma	7045619727	290	IT
+98	sushant	sawant	7045619727	290	IT
+99	anuj	vyas	7045619727	290	IT
+90	ovesh	shah	7045619727	290	IT
+Girishs-MacBook-Pro:Desktop girishsalunke$ sed 's/\t//' student.lst
+91	shakshi	parekh	7045619727	290	IT
+92	girish	salunke	7045619727	280	COMPS
+93	mohnish	nahani	7045619727	290	IT
+94	vini	soni	7045619727	290	COMPS
+95	janhavi	zarakpar7045619727	290	COMPS
+96	ayushi	shah	7045619727	290	IT
+97	mahima	sharma	7045619727	290	IT
+98	sushan	sawant	7045619727	290	IT
+99	anuj	vyas	7045619727	290	IT
+90	ovesh	shah	7045619727	290	IT
+Girishs-MacBook-Pro:Desktop girishsalunke$ sed 's/COMPS/IT/' student.lst
+91	shakshi	parekh	7045619727	290	IT
+92	girish	salunke	7045619727	280	IT
+93	mohnish	nathani	7045619727	290	IT
+94	vinit	soni	7045619727	290	IT
+95	janhavi	zarakpar7045619727	290	IT
+96	ayushi	shah	7045619727	290	IT
+97	mahima	sharma	7045619727	290	IT
+98	sushant	sawant	7045619727	290	IT
+99	anuj	vyas	7045619727	290	IT
+90	ovesh	shah	7045619727	290	IT
+Girishs-MacBook-Pro:Desktop girishsalunke$ sed '1,3s/^t/g' student.lst
+sed: 1: "1,3s/^t/g": unterminated substitute in regular expression
+Girishs-MacBook-Pro:Desktop girishsalunke$ sed 's^t//g' student.lst
+sed: 1: "s^t//g": unterminated substitute pattern
+Girishs-MacBook-Pro:Desktop girishsalunke$ sed '1,5s/COMPS/IT/' student.lst
+91	shakshi	parekh	7045619727	290	IT
+92	girish	salunke	7045619727	280	IT
+93	mohnish	nathani	7045619727	290	IT
+94	vinit	soni	7045619727	290	IT
+95	janhavi	zarakpar7045619727	290	IT
+96	ayushi	shah	7045619727	290	IT
+97	mahima	sharma	7045619727	290	IT
+98	sushant	sawant	7045619727	290	IT
+99	anuj	vyas	7045619727	290	IT
+90	ovesh	shah	7045619727	290	IT
+Girishs-MacBook-Pro:Desktop girishsalunke$ sed '1,5s/IT/EXTC/' student.lst
+91	shakshi	parekh	7045619727	290	EXTC
+92	girish	salunke	7045619727	280	COMPS
+93	mohnish	nathani	7045619727	290	EXTC
+94	vinit	soni	7045619727	290	COMPS
+95	janhavi	zarakpar7045619727	290	COMPS
+96	ayushi	shah	7045619727	290	IT
+97	mahima	sharma	7045619727	290	IT
+98	sushant	sawant	7045619727	290	IT
+99	anuj	vyas	7045619727	290	IT
+90	ovesh	shah	7045619727	290	IT
+Girishs-MacBook-Pro:Desktop girishsalunke$ grep sports product.lst
+201	rakesh	300	sports
+Girishs-MacBook-Pro:Desktop girishsalunke$ grep sports product.lst
+201	rakesh	300	sports
+601	mahima	800	sports
+701	janhavi	250	sports
+Girishs-MacBook-Pro:Desktop girishsalunke$ grep electronic product.lst
+401	bhavik	500	electronic	
+1001vinit	150	electronic
+Girishs-MacBook-Pro:Desktop girishsalunke$ grep -c clothing product.lst
+1
+Girishs-MacBook-Pro:Desktop girishsalunke$ grep -c beauty product.lst
+4
+Girishs-MacBook-Pro:Desktop girishsalunke$ grep "^1" product.lst
+101	shakshi	200	beauty
+1001vinit	150	electronic
+Girishs-MacBook-Pro:Desktop girishsalunke$ grep "^2" product.lst
+201	rakesh	300	sports
+Girishs-MacBook-Pro:Desktop girishsalunke$ grep "^3" product.lst
+301	parekh	400	clothing
+Girishs-MacBook-Pro:Desktop girishsalunke$ grep "^4" product.lst
+401	bhavik	500	electronic	
+Girishs-MacBook-Pro:Desktop girishsalunke$ grep "^ic" product.lst
+Girishs-MacBook-Pro:Desktop girishsalunke$ grep "ic$" product.lst
+1001vinit	150	electronic
+Girishs-MacBook-Pro:Desktop girishsalunke$ grep ^2 product.lst
+201	rakesh	300	sports
+Girishs-MacBook-Pro:Desktop girishsalunke$ grep ^[^2] product.lst
+101	shakshi	200	beauty
+301	parekh	400	clothing
+401	bhavik	500	electronic	
+501	ayushi	700	beauty
+601	mahima	800	sports
+701	janhavi	250	sports
+801	girish	350	beauty
+901 moni	450	beauty
+1001vinit	150	electronic
+Girishs-MacBook-Pro:Desktop girishsalunke$ grep -v sports product.lst
+101	shakshi	200	beauty
+301	parekh	400	clothing
+401	bhavik	500	electronic	
+501	ayushi	700	beauty
+801	girish	350	beauty
+901 moni	450	beauty
+1001vinit	150	electronic
+Girishs-MacBook-Pro:Desktop girishsalunke$ grep  [Ss]ports product.lst
+201	rakesh	300	sports
+601	mahima	800	sports
+701	janhavi	250	sports
+Girishs-MacBook-Pro:Desktop girishsalunke$ grep sports beauty product.lst
+grep: beauty: No such file or directory
+product.lst:201	rakesh	300	sports
+product.lst:601	mahima	800	sports
+product.lst:701	janhavi	250	sports
+Girishs-MacBook-Pro:Desktop girishsalunke$ grep -v sports beauty product.lst
+grep: beauty: No such file or directory
+product.lst:101	shakshi	200	beauty
+product.lst:301	parekh	400	clothing
+product.lst:401	bhavik	500	electronic	
+product.lst:501	ayushi	700	beauty
+product.lst:801	girish	350	beauty
+product.lst:901 moni	450	beauty
+product.lst:1001vinit	150	electronic
+Girishs-MacBook-Pro:Desktop girishsalunke$ grep -l sports beauty product.lst
+grep: beauty: No such file or directory
+product.lst
+Girishs-MacBook-Pro:Desktop girishsalunke$ grep -l sports -l beauty product.lst
+grep: beauty: No such file or directory
+product.lst
+Girishs-MacBook-Pro:Desktop girishsalunke$ grep -l sports product.lst
+product.lst
+Girishs-MacBook-Pro:Desktop girishsalunke$ grep  sports product.lst
+201	rakesh	300	sports
+601	mahima	800	sports
+701	janhavi	250	sports
+Girishs-MacBook-Pro:Desktop girishsalunke$ grep  sports -l beautyproduct.lst
+grep: beautyproduct.lst: No such file or directory
+Girishs-MacBook-Pro:Desktop girishsalunke$ grep  sports -l beauty product.lst
+grep: beauty: No such file or directory
+product.lst
+Girishs-MacBook-Pro:Desktop girishsalunke$ grep -n sports product.lst
+2:201	rakesh	300	sports
+6:601	mahima	800	sports
+7:701	janhavi	250	sports
+Girishs-MacBook-Pro:Desktop girishsalunke$ grep -n electronic product.lst
+4:401	bhavik	500	electronic	
+10:1001vinit	150	electronic
+Girishs-MacBook-Pro:Desktop girishsalunke$ grep ^[^2] product.lst
+101	shakshi	200	beauty
+301	parekh	400	clothing
+401	bhavik	500	electronic	
+501	ayushi	700	beauty
+601	mahima	800	sports
+701	janhavi	250	sports
+801	girish	350	beauty
+901 moni	450	beauty
+1001vinit	150	electronic
+Girishs-MacBook-Pro:Desktop girishsalunke$ grep ^[^1-3] product.lst
+401	bhavik	500	electronic	
+501	ayushi	700	beauty
+601	mahima	800	sports
+701	janhavi	250	sports
+801	girish	350	beauty
+901 moni	450	beauty
+Girishs-MacBook-Pro:Desktop girishsalunke$ grep ^[sports] product.lst
+Girishs-MacBook-Pro:Desktop girishsalunke$ grep [sports] product.lst
+101	shakshi	200	beauty
+201	rakesh	300	sports
+301	parekh	400	clothing
+401	bhavik	500	electronic	
+501	ayushi	700	beauty
+601	mahima	800	sports
+701	janhavi	250	sports
+801	girish	350	beauty
+901 moni	450	beauty
+1001vinit	150	electronic
+Girishs-MacBook-Pro:Desktop girishsalunke$ grep -e beauty|sports product.lst
+-bash: sports: command not found
+^[[A^[[D^[[A^C
+Girishs-MacBook-Pro:Desktop girishsalunke$ grep -E beauty|sports product.lst
+-bash: sports: command not found
+^C
+Girishs-MacBook-Pro:Desktop girishsalunke$ grep -E 'beauty|sports' product.lst
+101	shakshi	200	beauty
+201	rakesh	300	sports
+501	ayushi	700	beauty
+601	mahima	800	sports
+701	janhavi	250	sports
+801	girish	350	beauty
+901 moni	450	beauty
+Girishs-MacBook-Pro:Desktop girishsalunke$ grep -v -E 'beauty|sports' product.lst
+301	parekh	400	clothing
+401	bhavik	500	electronic	
+1001vinit	150	electronic
+Girishs-MacBook-Pro:Desktop girishsalunke$ cat >pattern.txt
+beauty|sports    
+^C
+Girishs-MacBook-Pro:Desktop girishsalunke$ cat pattern.txt
+beauty|sports
+Girishs-MacBook-Pro:Desktop girishsalunke$ grep -v -E 'pattern.txt' product.lst
+101	shakshi	200	beauty
+201	rakesh	300	sports
+301	parekh	400	clothing
+401	bhavik	500	electronic	
+501	ayushi	700	beauty
+601	mahima	800	sports
+701	janhavi	250	sports
+801	girish	350	beauty
+901 moni	450	beauty
+1001vinit	150	electronic
+Girishs-MacBook-Pro:Desktop girishsalunke$ grep  -E 'pattern.txt' product.lst
+Girishs-MacBook-Pro:Desktop girishsalunke$ 
+Girishs-MacBook-Pro:Desktop girishsalunke$ grep  -E 'pattern.txt' product.lst
+Girishs-MacBook-Pro:Desktop girishsalunke$ cat pattern1.txt
+cat: pattern1.txt: No such file or directory
+Girishs-MacBook-Pro:Desktop girishsalunke$ cat> pattern1.txt
+'beauty|sports'
+^C
+Girishs-MacBook-Pro:Desktop girishsalunke$ grep  -E pattern.txt product.lst
+Girishs-MacBook-Pro:Desktop girishsalunke$ grep -v -E 'beauty|sports' product.lst
+301	parekh	400	clothing
+401	bhavik	500	electronic	
+1001vinit	150	electronic
+Girishs-MacBook-Pro:Desktop girishsalunke$ grep -v -E 'beauty|sports' product.lst
+301	parekh	400	clothing
+401	bhavik	500	electronic	
+1001vinit	150	electronic
+Girishs-MacBook-Pro:Desktop girishsalunke$ cat>> pattern.lst
+grep -v -E 'beauty|sports' product.lst
+^C
+Girishs-MacBook-Pro:Desktop girishsalunke$ cat pattern.lst
+grep -v -E 'beauty|sports' product.lst
+Girishs-MacBook-Pro:Desktop girishsalunke$ product.lst|pattern.lst
+-bash: product.lst: command not found
+-bash: pattern.lst: command not found
+Girishs-MacBook-Pro:Desktop girishsalunke$ cat product.txt
+cat: product.txt: No such file or directory
+Girishs-MacBook-Pro:Desktop girishsalunke$ cat >product.txt
+grep -v -E 'beauty|sports'            
+^C
+Girishs-MacBook-Pro:Desktop girishsalunke$ cat product.txt
+grep -v -E 'beauty|sports'
+Girishs-MacBook-Pro:Desktop girishsalunke$ product.lst|product.txt
+-bash: product.lst: command not found
+-bash: product.txt: command not found
+Girishs-MacBook-Pro:Desktop girishsalunke$ product.lst|`product.txt`
+-bash: product.lst: command not found
+-bash: product.txt: command not found
+Girishs-MacBook-Pro:Desktop girishsalunke$ product.lst|`echo product.txt`
+-bash: product.lst: command not found
+-bash: product.txt: command not found
+Girishs-MacBook-Pro:Desktop girishsalunke$ product.lst|echo product.txt
+-bash: product.lst: command not found
+product.txt
+Girishs-MacBook-Pro:Desktop girishsalunke$ product.lst|cat product.txt
+-bash: product.lst: command not found
+grep -v -E 'beauty|sports'
+Girishs-MacBook-Pro:Desktop girishsalunke$ cat product.lst|cat product.txt
+grep -v -E 'beauty|sports'
+Girishs-MacBook-Pro:Desktop girishsalunke$ cat product.txt|cat product.lst
+101	shakshi	200	beauty
+201	rakesh	300	sports
+301	parekh	400	clothing
+401	bhavik	500	electronic	
+501	ayushi	700	beauty
+601	mahima	800	sports
+701	janhavi	250	sports
+801	girish	350	beauty
+901 moni	450	beauty
+1001vinit	150	electronicGirishs-MacBook-Pro:Desktop girishsalunke$ cat product.txt|`cat product.lst`
+-bash: 101: command not found
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk '{print $1$3}' product1.lst
+101200
+201300
+301400
+401500
+501700
+601800
+701250
+801350
+901450
+1001vinitelectricon
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk '{print $1 $3}' product1.lst
+101200
+201300
+301400
+401500
+501700
+601800
+701250
+801350
+901450
+1001vinitelectricon
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk '{print $1\t$3}' product1.lst
+awk: syntax error at source line 1
+ context is
+	{print >>>  $1\ <<< t$3}
+awk: illegal statement at source line 1
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk '{print $1 $3}' product1.lst
+101200
+201300
+301400
+401500
+501700
+601800
+701250
+801350
+901450
+1001vinitelectricon
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk '{print '$'1 '$3'}' product1.lst
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk '{print $1 '\t' $3}' product1.lst
+101200
+201300
+301400
+401500
+501700
+601800
+701250
+801350
+901450
+1001vinitelectricon
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk '{print $1 "\t" $3}' product1.lst
+101	200
+201	300
+301	400
+401	500
+501	700
+601	800
+701	250
+801	350
+901	450
+1001vinit	electricon
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk '/food/' product1.lst
+301	parekh	400	food
+501	ayushi	700	food
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk '$3<500' product1.lst
+101	shakshi	200	beauty
+201	rakesh	300	sports
+301	parekh	400	food
+701	janhavi	250	sports
+801	girish	350	beauty
+901 moni	450	beauty
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk '$3 < 500' product1.lst
+101	shakshi	200	beauty
+201	rakesh	300	sports
+301	parekh	400	food
+701	janhavi	250	sports
+801	girish	350	beauty
+901 moni	450	beauty
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk '$3 > 500' product1.lst
+501	ayushi	700	food
+601	mahima	800	sports
+1001vinit	150	electronic
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk '1000 < $3 > 500' product1.lst
+awk: syntax error at source line 1
+ context is
+	1000 < $3 >>>  > <<<  500
+awk: bailing out at source line 1
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk '1000 < $3 && $3 > 500' product1.lst
+1001vinit	150	electronic
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk '$3 < 1000 && $3 > 500' product1.lst
+501	ayushi	700	food
+601	mahima	800	sports
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk '$3 > 1000 && $3 < 500' product1.lst
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk '$3 > 1000 || $3 < 500' product1.lst
+101	shakshi	200	beauty
+201	rakesh	300	sports
+301	parekh	400	food
+701	janhavi	250	sports
+801	girish	350	beauty
+901 moni	450	beauty
+1001vinit	150	electronic
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk '$3=="sports"' product1.lst
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk '$4=="sports"' product1.lst
+201	rakesh	300	sports
+601	mahima	800	sports
+701	janhavi	250	sports
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk '$4!="sports"' product1.lst
+101	shakshi	200	beauty
+301	parekh	400	food
+401	bhavik	500	electronic	
+501	ayushi	700	food
+801	girish	350	beauty
+901 moni	450	beauty
+1001vinit	150	electronic
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk '$4!="electronic"' product1.lst
+101	shakshi	200	beauty
+201	rakesh	300	sports
+301	parekh	400	food
+501	ayushi	700	food
+601	mahima	800	sports
+701	janhavi	250	sports
+801	girish	350	beauty
+901 moni	450	beauty
+1001vinit	150	electronic
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk '$4!="electronic"' product1.lst
+101	shakshi	200	beauty
+201	rakesh	300	sports
+301	parekh	400	food
+501	ayushi	700	food
+601	mahima	800	sports
+701	janhavi	250	sports
+801	girish	350	beauty
+901 moni	450	beauty
+1001vinit	150	electronic
+Girishs-MacBook-Pro:Desktop girishsalunke$ 
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk '$4!="electronic"' product1.lst
+101	shakshi	200	beauty
+201	rakesh	300	sports
+301	parekh	400	food
+501	ayushi	700	food
+601	mahima	800	sports
+701	janhavi	250	sports
+801	girish	350	beauty
+901 moni	450	beauty
+1001vinit	150	electronic
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk '$4!="electronic"' product1.lst
+101	shakshi	200	beauty
+201	rakesh	300	sports
+301	parekh	400	food
+501	ayushi	700	food
+601	mahima	800	sports
+701	janhavi	250	sports
+801	girish	350	beauty
+901 moni	450	beauty
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk '!~/od/' product1.lst
+awk: syntax error at source line 1
+ context is
+	 >>> !~ <<< 
+awk: bailing out at source line 1
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk '!~/od$/' product1.lst
+awk: syntax error at source line 1
+ context is
+	 >>> !~ <<< 
+awk: bailing out at source line 1
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk '~/od$/' product1.lst
+awk: syntax error at source line 1
+ context is
+	 >>> ~ <<< 
+awk: bailing out at source line 1
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk 'os$' product1.lst
+awk: unexpected end of input after $ at source line 1
+ context is
+	 >>>  <<< 
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk '$od' product1.lst
+awk: illegal field $(), name "od"
+ input record number 1, file product1.lst
+ source line number 1
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk '$1 ~ "od$"' product1.lst
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk '$1 ~ "01$"' product1.lst
+101	shakshi	200	beauty
+201	rakesh	300	sports
+301	parekh	400	food
+401	bhavik	500	electronic	
+501	ayushi	700	food
+601	mahima	800	sports
+701	janhavi	250	sports
+801	girish	350	beauty
+901 moni	450	beauty
+1001 vinit	150	electronic
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk '$4 ~ "od$"' product1.lst
+301	parekh	400	food
+501	ayushi	700	food
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk '$4 ~ "^od$"' product1.lst
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk '$4 !~ "od$"' product1.lst
+101	shakshi	200	beauty
+201	rakesh	300	sports
+401	bhavik	500	electronic	
+601	mahima	800	sports
+701	janhavi	250	sports
+801	girish	350	beauty
+901 moni	450	beauty
+1001 vinit	150	electronic
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk '$4 ~ "y$" || $4 ~ "g$"' product1.lst
+101	shakshi	200	beauty
+801	girish	350	beauty
+901 moni	450	beauty
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk '$4 ~ "y$" || $4 ~ "s$"' product1.lst
+101	shakshi	200	beauty
+201	rakesh	300	sports
+601	mahima	800	sports
+701	janhavi	250	sports
+801	girish	350	beauty
+901 moni	450	beauty
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk '$4 !~ "od$"{print $1"\t"$2"\t"$3}' product1.lst
+101	shakshi	200
+201	rakesh	300
+401	bhavik	500
+601	mahima	800
+701	janhavi	250
+801	girish	350
+901	moni	450
+1001	vinit	150
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk '$4 ~ "d$" || $4 ~ "s$"{print$1"\t"$2"\t"$3' product1.lst
+awk: syntax error at source line 1
+ context is
+	 >>>  <<< 
+awk: illegal statement at source line 1
+	missing }
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk '$4 ~ "d$" || $4 ~ "s$"{print$1"\t"$2"\t"$3}' product1.lst
+201	rakesh	300
+301	parekh	400
+501	ayushi	700
+601	mahima	800
+701	janhavi	250
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk 'NR>=3 && NR<=7' product1.lst
+301	parekh	400	food
+401	bhavik	500	electronic	
+501	ayushi	700	food
+601	mahima	800	sports
+701	janhavi	250	sports
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk 'NR==3 || NR==7' product1.lst
+301	parekh	400	food
+701	janhavi	250	sports
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk 'NR=3 || NR=7' product1.lst
+101	shakshi	200	beauty
+201	rakesh	300	sports
+301	parekh	400	food
+401	bhavik	500	electronic	
+501	ayushi	700	food
+601	mahima	800	sports
+701	janhavi	250	sports
+801	girish	350	beauty
+901 moni	450	beauty
+1001 vinit	150	electronic
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk 'NR>=2 && NR<=8' product1.lst
+201	rakesh	300	sports
+301	parekh	400	food
+401	bhavik	500	electronic	
+501	ayushi	700	food
+601	mahima	800	sports
+701	janhavi	250	sports
+801	girish	350	beauty
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk 'NR>=2 && NR<=8 print{$1"\t"$2"\t"$3}' product1.lst
+awk: syntax error at source line 1
+ context is
+	NR>=2 && NR<=8 >>>  print <<< {$1"\t"$2"\t"$3}
+awk: bailing out at source line 1
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk 'NR>=2 && NR<=8 print{$1"\t"$2"\t"$3}' product1.lst
+awk: syntax error at source line 1
+ context is
+	NR>=2 && NR<=8 >>>  print <<< {$1"\t"$2"\t"$3}
+awk: bailing out at source line 1
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk 'NR>=2 && NR<=8 {print $1"\t"$2"\t"$3}' product1.lst
+201	rakesh	300
+301	parekh	400
+401	bhavik	500
+501	ayushi	700
+601	mahima	800
+701	janhavi	250
+801	girish	350
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk 'NR<=2 && NR>=8' product1.lst
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk 'NR<=2 && NR>=8' product1.lst
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk 'NR<=2 && NR>=8' product1.lst
+Girishs-MacBook-Pro:Desktop girishsalunke$ awk 'NR<=2 || NR>=8' product1.lst
+101	shakshi	200	beauty
+201	rakesh	300	sports
+801	girish	350	beauty
+901 moni	450	beauty
+1001 vinit	150	electronic
+Girishs-MacBook-Pro:Desktop girishsalunke$
+				b*

@@ -1,0 +1,46 @@
+Client Program:
+
+import socket
+sc = socket.socket()
+sc.connect(('127.0.0.1', 12000))
+print(sc.recv(1024).decode())
+msg = input("Enter any message\n")
+while(msg!= 'Exit'):
+    sc.send(msg.encode())
+    data = sc.recv(1024)
+    print(data.decode())
+    msg = input("Enter any message\n")
+sc.close()
+
+Server Program:
+
+import socket
+sc = socket.socket()
+sc.bind(('127.0.0.1', 12000))
+sc.listen(1)
+while(True):
+    c, a = sc.accept()
+    str = 'Connection successfully established'.encode()
+    c.send(str)
+
+    data = c.recv(1024)
+    if data:
+        print(data.decode())
+        msg = input("Enter your response\n")
+        c.send(msg.encode())
+    else:
+        break
+
+sc.close()
+
+Client Output:
+
+Connection successfully established
+Enter any message
+Hello
+
+Server Output:
+
+Hello
+Enter your response
+

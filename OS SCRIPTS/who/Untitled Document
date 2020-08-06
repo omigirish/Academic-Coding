@@ -1,0 +1,15 @@
+#!/bin/bash
+echo "Enter your first name"
+read fn
+echo "Enter your middle name"
+read mn
+echo "Enter your last name"
+read ln
+echo "ENTER YOUR ROLL NO , BATCH , CLASS"
+read roll
+read batch
+read class
+echo " $fn $mn $ln your details are :"
+echo " Roll = $roll"
+echo " Batch = $batch"
+echo " Class = $class" 
