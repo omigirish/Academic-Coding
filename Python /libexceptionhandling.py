@@ -4,10 +4,10 @@ def addbook(lib):
     try:
         name = input("Enter the name of the book you wish to add: ")
         no=int(input("How many book to add?"))
-        lib.update({name: no})
     except TypeError:
         print("Invalid number by default 5 books added....")
-        lib.update({name: 5})
+        no=5
+        lib.update({name:no})
 
 def removebook(lib):
     try:
@@ -68,23 +68,23 @@ print("Menu:\n1=Issue \n2=Return \n3=Add new book \n4=Delete a book\n5=Get book 
 while choice>=1 and choice<=7:
     try:
         choice=int(input("Enter your choice:"))
-    except ValueError:
+    except TypeError:
         print("Error Occurred in choice....")
-    if choice==1:
-        issuebook(lib)
-    elif choice==2:
-        returnbook(lib)
-    elif choice==3:
-        addbook(lib)
-    elif choice==4:
-        removebook(lib)
-    elif choice==5:
-        findbook(lib)
-    elif choice==6:
-        register()
-    elif choice==7:
-        getdetails()
-    else:
-        print("Invalid choice...Exiting program....")
-        print("The current status of the Library is:")
-        print(lib)
+        if choice==1:
+            issuebook(lib)
+        elif choice==2:
+            returnbook(lib)
+        elif choice==3:
+            addbook(lib)
+        elif choice==4:
+            removebook(lib)
+        elif choice==5:
+            findbook(lib)
+        elif choice==6:
+            register()
+        elif choice==7:
+            getdetails()
+        else:
+            print("Invalid choice...Exiting program....")
+            print("The current status of the Library is:")
+            print(lib)
